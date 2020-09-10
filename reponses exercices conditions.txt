@@ -1,0 +1,218 @@
+
+Debut 3.1
+
+X <- 0 // déclaration et initialisation de x
+saisir A
+saisir B
+
+si A = 0
+alors si B =/= 0
+	alors
+	afficher "ça sera impossible"
+	sinon
+	afficher "valeur indéterminée"
+
+X = (-b/a)
+
+afficher " voilà le résultat : ", X
+Fin 3.1
+
+
+Début 3.2
+
+saisir A
+saisir B
+
+si A<B
+	alors
+	afficher "A est plus petit que B"
+	sinon 	si A>B
+			alors
+				afficher "A est plus grand que B"
+			sinon
+				afficher "A est égal à B"
+Fin 3.2
+
+Début 3.3
+
+saisir somme
+si somme MOD 0.1 =/= 0
+	alors
+		somme <- somme + (0.1 - somme MOD 0.1)
+finsi
+
+si 	somme <=0
+	alors 
+		afficher "somme nulle ou négative"
+	sinon
+		Afficher somme, "€ se divise en "
+finsi
+
+si somme >= 100
+	alors
+		Afficher somme DIV 100
+		si (somme DIV 100) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 100"
+	somme <- somme MOD 100
+finsi
+
+si somme >= 50
+	alors
+		Afficher somme DIV 50
+		si (somme DIV 50) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 50"
+	somme <- somme MOD 50
+finsi
+
+si somme >= 20
+	alors
+		Afficher somme DIV 20
+		si (somme DIV 20) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 20"
+	somme <- somme MOD 20
+finsi
+
+si somme >= 10
+	alors
+		Afficher somme DIV 10
+		si (somme DIV 10) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 10"
+	somme <- somme MOD 10
+finsi
+
+si somme >= 5
+	alors
+		Afficher somme DIV 5
+		si (somme DIV 5) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 5"
+	somme <- somme MOD 5
+finsi
+
+si somme >= 2
+	alors
+		Afficher somme DIV 2
+		si (somme DIV 2) > 1
+			alors
+				afficher " pièces "
+			sinon
+				afficher " pièce "
+		finsi
+	afficher "de 2"
+	somme <- somme MOD 2
+finsi
+
+si somme >= 1
+	alors
+		Afficher somme DIV 1
+		si (somme DIV 1) > 1
+			alors
+				afficher " pièces "
+			sinon
+				afficher " pièce "
+		finsi
+	afficher "de 1"
+	somme <- somme MOD 1
+finsi
+
+si somme >= 0.5
+	alors
+		Afficher somme DIV 0.5
+		si (somme DIV 0.5) > 1
+			alors
+				afficher " pièces "
+			sinon
+				afficher " pièce "
+		finsi
+	afficher "de 0.5"
+	somme <- somme MOD 0.5
+finsi
+
+si somme >= 0.2
+	alors
+		Afficher somme DIV 0.2
+		si (somme DIV 0.2) > 1
+			alors
+			afficher " pièces "
+				sinon
+			afficher " pièce "
+		finsi
+	afficher "de 0.2"
+	somme <- somme MOD 0.2
+finsi
+
+Fin toutcourt
+
+3.4
+
+Début comparaison
+
+Afficher "Choisis 3 nombres, je vais les comparer"
+saisir a
+saisir b
+saisir c
+si A =/= B et B =/= C
+	alors
+	si A < B et B < C
+		afficher A, " < ",B," < ", C
+	finsi
+	si A < C et C < B
+		afficher A, " < ",C," < ", B
+	finsi
+	si B < A et A < C
+		afficher B, " < ",A," < ", C
+	finsi
+	si B < C et C < A
+		afficher B, " < ",C," < ", A
+	finsi
+	si C < A et A < B
+		afficher C, " < ",A," < ", B
+	finsi
+	si C < B et B < A
+		afficher C, " < ",B," < ", A
+	finsi
+finsi
+
+si A = B et B = C
+	afficher A, " = ", B, " = ", C
+si A = B et B < C
+	afficher A, " = ", B, " < ", C
+si A = B et C < B
+	afficher C, " < ", B, " = ", A
+si B = C et A < B
+	afficher A, " < ", B, " = ", C
+si B = C et B < A
+	afficher B, " = ", C, " < ", A
+si A = C et A < B
+	afficher A, " = ", C, " < ", B
+si A = C et B < A
+	afficher B, " < ", A, " < ", C
+
+
+
+
+
