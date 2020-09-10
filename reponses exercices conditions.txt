@@ -212,7 +212,7 @@ si A = C et A < B
 si A = C et B < A
 	afficher B, " < ", A, " < ", C
 
-
+Salut Hugo ! Ca roule???
 
 
 
