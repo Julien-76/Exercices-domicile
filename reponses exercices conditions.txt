@@ -54,7 +54,24 @@ si somme >= 100
 		si (somme DIV 100) > 1
 			alors
 				afficher " billets "
-	
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 100"
+	somme <- somme MOD 100
+finsi
+
+si somme >= 50
+	alors
+		Afficher somme DIV 50
+		si (somme DIV 50) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 50"
+	somme <- somme MOD 50
 finsi
 
 si somme >= 20
@@ -70,7 +87,88 @@ si somme >= 20
 	somme <- somme MOD 20
 finsi
 
-si somme
+si somme >= 10
+	alors
+		Afficher somme DIV 10
+		si (somme DIV 10) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 10"
+	somme <- somme MOD 10
+finsi
+
+si somme >= 5
+	alors
+		Afficher somme DIV 5
+		si (somme DIV 5) > 1
+			alors
+				afficher " billets "
+			sinon
+				afficher " billet "
+		finsi
+	afficher "de 5"
+	somme <- somme MOD 5
+finsi
+
+si somme >= 2
+	alors
+		Afficher somme DIV 2
+		si (somme DIV 2) > 1
+			alors
+				afficher " pièces "
+			sinon
+				afficher " pièce "
+		finsi
+	afficher "de 2"
+	somme <- somme MOD 2
+finsi
+
+si somme >= 1
+	alors
+		Afficher somme DIV 1
+		si (somme DIV 1) > 1
+			alors
+				afficher " pièces "
+			sinon
+				afficher " pièce "
+		finsi
+	afficher "de 1"
+	somme <- somme MOD 1
+finsi
+
+si somme >= 0.5
+	alors
+		Afficher somme DIV 0.5
+		si (somme DIV 0.5) > 1
+			alors
+				afficher " pièces "
+			sinon
+				afficher " pièce "
+		finsi
+	afficher "de 0.5"
+	somme <- somme MOD 0.5
+finsi
+
+si somme >= 0.2
+	alors
+		Afficher somme DIV 0.2
+		si (somme DIV 0.2) > 1
+			alors
+			afficher " pièces "
+				sinon
+			afficher " pièce "
+		finsi
+	afficher "de 0.2"
+	somme <- somme MOD 0.2
+finsi
+
+Fin toutcourt
+
+3.4
+
 Début comparaison
 
 Afficher "Choisis 3 nombres, je vais les comparer"
@@ -102,16 +200,19 @@ finsi
 si A = B et B = C
 	afficher A, " = ", B, " = ", C
 si A = B et B < C
-
+	afficher A, " = ", B, " < ", C
+si A = B et C < B
+	afficher C, " < ", B, " = ", A
+si B = C et A < B
+	afficher A, " < ", B, " = ", C
+si B = C et B < A
+	afficher B, " = ", C, " < ", A
 si A = C et A < B
 	afficher A, " = ", C, " < ", B
 si A = C et B < A
 	afficher B, " < ", A, " < ", C
 
-Salut Hugo ! Ca roule???
-
-faeniofnaeiofaznoifazniofaznfioaznfioaznfioaznfioaznfaznifaznfoazenfiaeonzeioze bno
 
 
 
-WTF ! ! ! ! ! ! ! !
+

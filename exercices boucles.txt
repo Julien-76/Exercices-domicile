@@ -1,0 +1,34 @@
+Début choix
+afficher "entre un nombre"
+saisir nombre
+
+tant que (nombre =/= 0) et (nombre =/= 1) et (nombre =/= 2) et (nombre =/= 3) et (nombre =/= 4)
+	afficher "ce n'est pas un bon choix, réessaie"
+	saisir nombre
+fin tant que
+afficher "Voilà c'est un bon choix ! "
+
+fin choix
+
+début moyenne
+afficher "entre différents nombres, je calculerai leur moyenne, pour terminer, tape 100"
+nombres <- 0
+diviseur <- 0
+moyenne <- 0
+saisir nombreTest
+tant que (nombreTest MOD 1) =/= 0
+	afficher "je veux un entier"
+	saisir nombreTest
+fin tant que
+tant que (nombreTest =/= 100)
+	nombres <- nombres + nombreTest
+	diviseur <- diviseur + 1
+	saisir nombreTest
+	tant que (nombreTest MOD 1) =/= 0
+		afficher "je veux un entier"
+		saisir nombreTest
+	fin tant que
+Fin tant que
+moyenne <- nombres / diviseur
+afficher "Voici la moyenne", moyenne
+Fin moyenne
