@@ -32,3 +32,109 @@ Fin tant que
 moyenne <- nombres / diviseur
 afficher "Voici la moyenne", moyenne
 Fin moyenne
+
+Début 4.3
+nombres <- 0
+max <-0
+min <-0
+cpt <- 1
+afficher "Tape des nombres, je te dirai quel est le plus grand et le plus petit. Pour terminer, tape 100"
+saisir nombres
+max <- nombres
+min <- nombres
+cptMax <- 1
+cptMin <- 1
+tant que nombres =/= 100
+	si nombres < min
+		alors
+		min <- nombres
+		cptMin <- cpt
+	fin si
+	si nombres > max
+		alors
+		max <- nombres
+		cptMax <- cpt
+	fin si
+	cpt = cpt + 1
+	saisir nombres
+fin tant que
+afficher "Voici le plus grand nombre de la série : ", max, "c'était en position ", cptMax
+afficher "Voici le plus petit nombre de la série : ", min, "c'était en position ", cptMin
+fin 4.3
+
+Début 4.4
+nombres <- 0
+curNbre <- 0
+max <- 0
+min <- 0
+tete <- 0
+pied <- 0
+afficher "Entre des nombres, je te dirai la taille de la plus grande chaine croissante et décroissante, pour terminer, tape 100"
+saisir curNbre
+cptMax <- 1
+tant que curNbre =/= 100
+	si curNbre > nombres
+		alors
+		max <- max + 1
+		sinon
+		max <- 0
+	fin si
+	si max >= tete
+		alors
+		tete <- max
+	fin si
+		si curNbre < nombres
+		alors
+		min <- min + 1
+		sinon
+		min <- 0
+	fin si
+	si max >= tete
+		alors
+		pied <- max
+	fin si
+	nombre <- curNbre
+	saisir curNbre
+fin tant que
+afficher "Voici la taille de la plus grande chaine croissante : ", tete
+afficher "Voici la taille de la plus grande chaine décroissante : ", pied
+Fin 4.4
+
+Début 4.5
+nombre <- 0
+afficher "Tape un entier positif, je te dirai sa factorielle"
+saisir nombre
+tant que (nombre MOD 1) =/= 0
+	afficher "je veux un entier"
+	saisir nombre
+fin tant que
+tant que (nombre <= 0)
+	afficher "il faut un nombre positif ! (de 1 à ...)"
+	saisir nombre
+fin tant que
+afficher "Voici sa factorielle : "
+tant que nombre =/= 0
+	afficher nombre
+	nombre <- nombre -1
+fin tant que
+fin 4.5
+
+Debut 5.1
+afficher "écris 30 nombres et je te donnerai la moyenne de ceux entre 10 et 20.
+nombres <- 0
+cpt <- 0
+moyenne <- 0
+curNbre <- 0
+cptMoyenne <- 0
+pour cpt allant de 1 à 30 à pas de 1
+saisir nombres
+si (cpt > 10) et (cpt <= 20)
+	alors
+	curNbre <- nombres + curNbre
+	cptMoyenne = cptMoyenne +1
+fin si
+cpt <- cpt +1
+fin pour
+moyenne = curNbre / cptMoyenne
+afficher "Voici la moyenne des chiffres entre 10 et 20 : ", moyenne
+fin 5.1
