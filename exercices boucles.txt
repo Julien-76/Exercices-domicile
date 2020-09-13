@@ -89,9 +89,9 @@ tant que curNbre =/= 100
 		sinon
 		min <- 0
 	fin si
-	si max >= tete
+	si min >= pied
 		alors
-		pied <- max
+		pied <- min
 	fin si
 	nombre <- curNbre
 	saisir curNbre
