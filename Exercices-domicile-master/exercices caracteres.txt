@@ -1,0 +1,187 @@
+Debut 6.1
+	Déclarations variables
+		var texte :T <- ""
+		var carac :C <- ''
+		var position :N <- 1
+		var test :B <- faux
+	Fin déclaration variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Entre un caractère"
+	saisir carac
+	tant que test = faux et pos <= longueur (texte)
+		si caract(texte, position) = carac
+			alors
+			test = vrai
+			afficher "Le caractère se trouve à la position", position
+			sinon
+			pos <- pos + 1
+		fin si
+	fin tant que
+	si test = faux
+		alors
+		afficher "pas là"
+	fin si
+Fin 6.1
+
+Debut 6.1.2
+	Déclarations variables
+		var texte :T <- ""
+		var carac :C <- ''
+		var pos :N <- 0
+		var posFin :N <- 0
+	Fin déclaration variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Entre un caractère"
+	saisir carac
+	Pour pos allant de 1 à longueur(texte) par pas de 1
+		si caract(texte, position) = carac
+			posFin <- pos
+		fin si
+	pos suivant
+	si posFin = 0
+		alors
+		afficher "Le caractère n'apparaît pas"
+		sinon
+		afficher "La dernière position du caractère est : ", posFin
+	fin si
+Fin 6.1.2
+
+Debut 6.1.3
+	Déclarations variables
+		var texte :T <- ""
+		var carac :C <- ''
+		var pos :N <- 0
+		var posFin :N <- 0
+		var apparitions :N <- 0
+	Fin déclaration variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Entre un caractère"
+	saisir carac
+	Pour pos allant de 1 à longueur(texte) par pas de 1
+		si caract(texte, position) = carac
+			apparitions = apparitions + 1
+		fin si
+	pos suivant
+	afficher "Le caractère apparaît ", apparitions, " fois"
+	si apparitions = 0
+		alors
+		afficher "pas là"
+	fin si
+Fin 6.1.3
+
+Debut 6.2.1
+	Déclaration des variables
+		var texte :T <- ""
+		var scan :T <- ""
+		var debut :N <- 1
+		var final :N <- 1
+		var test = faux
+	Fin déclarations variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Entre un texte à rechercher dans ton premier texte"
+	saisir scan
+	tant que longueur(scan) > longueur(texte)
+		afficher "Impossible, texte plus grand que l'original
+		afficher "Entre un texte"
+		saisir texte
+		afficher "Entre un texte à rechercher dans ton premier texte"
+		saisir scan
+	fin tant que
+	final = longueur(scan)
+	tant que test = faux et final <= longueur(texte)
+		si scan = sousChaine(texte, debut, fin)
+			alors
+			test = vrai
+			sinon
+			debut <- debut + 1
+			final <- final + 1
+		fin si
+	fin tant que
+	afficher "Le texte apparaît pour la première fois à partir de la
+	position ", debut
+Fin 6.2.1
+
+Debut 6.2.2
+Déclaration des variables
+		var texte :T <- ""
+		var scan :T <- ""
+		var debut :N <- 1
+		var final :N <- 1
+		var test :N <- 0
+	Fin déclarations variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Entre un texte à rechercher dans ton premier texte"
+	saisir scan
+	tant que longueur(scan) > longueur(texte)
+		afficher "Impossible, texte plus grand que l'original
+		afficher "Entre un texte"
+		saisir texte
+		afficher "Entre un texte à rechercher dans ton premier texte"
+		saisir scan
+	fin tant que
+	final = longueur(scan)
+	tant que final <= longueur(texte)
+		si scan = sousChaine(texte, debut, fin)
+			alors
+			test <- debut
+			sinon
+			debut <- debut + 1
+			final <- final + 1
+		fin si
+	fin tant que
+	afficher "La chaine de caractère apparait la dernère fois à partir 
+		  de la position", test
+Fin 6.2.2
+
+Debut 6.2.3
+Déclaration des variables
+		var texte :T <- ""
+		var scan :T <- ""
+		var debut :N <- 1
+		var final :N <- 1
+		var test :N <- 0
+	Fin déclarations variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Entre un texte à rechercher dans ton premier texte"
+	saisir scan
+	tant que longueur(scan) > longueur(texte)
+		afficher "Impossible, texte plus grand que l'original
+		afficher "Entre un texte"
+		saisir texte
+		afficher "Entre un texte à rechercher dans ton premier texte"
+		saisir scan
+	fin tant que
+	final = longueur(scan)
+	tant que final <= longueur(texte)
+		si scan = sousChaine(texte, debut, fin)
+			alors
+			test <- test + 1
+			sinon
+			debut <- debut + 1
+			final <- final + 1
+		fin si
+	fin tant que
+	afficher "La chaine de caractère apparait ", test, " fois"
+Fin 6.2.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
