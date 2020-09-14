@@ -35,33 +35,45 @@ Fin moyenne
 
 Début 4.3
 	Déclaration variables
-		nombres <- 0
-		max <-0
-		min <-0
-		cpt <- 1
+		var nombres :N <- 0
+		var max :N <-0
+		var min :N <-0
+		var cpt :N <- 1
+		var occMax :N <- 0
+		var occMin :N <- 0
+		var cptMax :N <- 1
+		var cptMin :N <- 1
 	Fin déclaration
 	afficher "Tape des nombres, je te dirai quel est le plus grand et le plus petit. Pour terminer, tape 100"
 	saisir nombres
 	max <- nombres
 	min <- nombres
-	cptMax <- 1
-	cptMin <- 1
 	tant que nombres =/= 100
 		si nombres < min
 			alors
 			min <- nombres
 			cptMin <- cpt
+			occMin <- 1
 		fin si
 		si nombres > max
 			alors
 			max <- nombres
 			cptMax <- cpt
+			occMax <- 1
 		fin si
+		si max = occMax
+			alors
+			occMax = occMax +1
+		si min = occMin
+			alors
+			occMin = occMin +1
 		cpt = cpt + 1
 		saisir nombres
 	fin tant que
-	afficher "Voici le plus grand nombre de la série : ", max, "c'était en position ", cptMax
-	afficher "Voici le plus petit nombre de la série : ", min, "c'était en position ", cptMin
+	afficher "Voici le plus grand nombre de la série : ", max, "Nombre d'apparitions : ", occMax
+	afficher "C'était en position ", cptMax
+	afficher "Voici le plus petit nombre de la série : ", min, "Nombre d'appatitions : ", occMin
+	afficher "C'était en position ", cptMin
 fin 4.3
 
 Début 4.4
@@ -69,9 +81,9 @@ Début 4.4
 		var nombres :N <- 0
 		var curNbre :N <- 0
 		var max :N <- 0
-		var min :N <- 0
+		var min :N <- 1
 		var tete :N <- 0
-		var pied :N <- 0
+		var pied :N <- 1
 	Fin déclaration variables
 	afficher "Entre des nombres, je te dirai la taille de la plus grande chaine croissante et décroissante, pour terminer, tape 100"
 	saisir curNbre
@@ -80,7 +92,7 @@ Début 4.4
 			alors
 			max <- max + 1
 			sinon
-			max <- 0
+			max <- 1
 		fin si
 		si max >= tete
 			alors
@@ -90,7 +102,7 @@ Début 4.4
 			alors
 			min <- min + 1
 			sinon
-			min <- 0
+			min <- 1
 		fin si
 		si min >= pied
 			alors
@@ -105,23 +117,22 @@ Fin 4.4
 
 Début 4.5
 	Déclaration variables
-		nombre <- 0
+		var nombre :N <- 0
+		var fact :N <- 1
 	Fin déclarations variables
 	afficher "Tape un entier positif, je te dirai sa factorielle"
 	saisir nombre
-	tant que (nombre <= 0)
-		afficher "il faut un nombre positif ! (de 1 à ...)"
+	tant que (nombre MOD 1) =/= 0 ou (nombre <= 0)
+		afficher "je veux un entier positif (de 1 à ...) "
 		saisir nombre
 	fin tant que
-	tant que (nombre MOD 1) =/= 0
-		afficher "je veux un entier"
-		saisir nombre
-	fin tant que
+	fact <- nombre
 	afficher "Voici sa factorielle : "
-	tant que nombre =/= 0
-		afficher nombre
+	tant que nombre =/= 2
+		fact <- fact * (nombre -1)
 		nombre <- nombre -1
 	fin tant que
+	afficher fact
 fin 4.5
 
 Debut 5.1
@@ -133,14 +144,14 @@ Debut 5.1
 		var curNbre :N <- 0
 		var cptMoyenne :N <- 0
 	Findéclaration variables
-	pour cpt allant de 1 à 30 à pas de 1
+	pour cpt allant de 1 à 30 par pas de 1
 		saisir nombre
 		si (nombre >= 10) et (nombre <= 20)
 			alors
 			curNbre <- nombre + curNbre
 			cptMoyenne = cptMoyenne +1
 		fin si
-	cpt suivant
+		cpt suivant
 	fin pour
 	si cptMoyenne = 0
 		Alors
@@ -158,23 +169,22 @@ Debut 5.2
 		var pied :N <- 0
 		var somme :N <- 0
 	Fin déclaration variables
-	afficher "Entre 2 nombres, je te donnerai la somme des nombres compris entre ces 
-	2 nombres
+	afficher "Entre 2 nombres, je te donnerai la somme des nombres compris entre ces 2 nombres
 	Afficher "Nombre de départ ?"
 	saisir pied
 	Afficher "Nombre de fin"
 	saisir tete
-	tant que tete < pied
-		afficher "Non, il me faut un nombre plus grand que le nombre de départ"
+	tant que tete <= pied
+		afficher "Non, il me faut un nombre strictement plus grand que le nombre de départ"
+		Afficher "Nombre de départ ?"
+		saisir pied
+		Afficher "Nombre de fin"
 		saisir tete
 	fin tant que
 	pour cpt allant de pied à tete par pas de 1
 		somme <- somme + cpt
-	cpt suivant
-	si pied = tete
-		alors
-		somme <- pied
-	fin si
+		cpt suivant
+	fin pour
 	afficher "Voila l'addition des nombres : ", somme
 fin 5.2
 
@@ -184,21 +194,17 @@ Debut 5.3
 		var choix :N <- 0
 	Fin déclaration variables
 	afficher "J'ai choisi un nombre entre 1 et 100. Trouve-le !"
-	Répéter
 	saisir choix
+	tant que N =/= choix
 		si choix < N
 			alors
 			afficher "C'est plus grand"
-		si choix > N
-			alors
+			sinon
 			afficher "C'est plus petit"
-		si choix = N
-			alors
-			afficher "Gagné !!"
-	jusqu'à ce que choix = N
+		saisir choix
+	fin tant que
+	afficher "Gagné !!"
 Fin 5.3
-
-
 
 
 
