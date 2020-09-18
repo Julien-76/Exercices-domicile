@@ -29,7 +29,7 @@ Debut 7.2
 			alors
 			min <- chiffres
 		fin si
-	fin pour
+	cpt suivant
 	afficher "Voici le nombre max du tableau : ", max
 	afficher "Voici le nombre min du tableau : ", min
 Fin 7.2
@@ -52,7 +52,26 @@ Debut 7.3
 	fin tant que
 Fin 7.3
 
-
+Debut 7.4
+	Début déclaration variables
+		var cases :N <- 1
+		var case2 :N <- 10
+	Fin déclaration variables
+	Début déclarations tableaux
+		const cases :N <- 10
+		var tab :N [cases]
+		var tab2 :N [cases]
+	Fin déclaration tableaux
+	afficher "Entre 10 nombres, j'intervertirai leur ordre"
+	pour cpt allant de 1 à 10
+		saisir tab[case]
+		tab2[case2] <- tab[cases]
+		case2 <- case2 - 1
+	cpt suivant
+	pour case2 allant de 1 à 10
+		afficher Tab2[case2], " "
+	case2 suivant
+Fin 7.4
 
 
 
