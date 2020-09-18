@@ -73,6 +73,54 @@ Debut 7.4
 	case2 suivant
 Fin 7.4
 
+Debut 7.5
+	Début déclaration variables
+		var cases :N <- 0
+		var espaces :N <- 0
+		var test :B <- false
+	Fin déclaration variables
+	Début déclaration tableaux
+		var tab :carac [23] {s,u,p,p,r,i,m,e,r, , ,l,e,s, ,e,s,p,a,c,e,s, ,}
+	Fin déclaration tableaux
+	tant que test = false
+		espaces <- 0
+		pour cpt4 allant de 1 à 23
+			si tab[cpt4] = ' '
+				alors
+				espaces <- espaces + 1
+			fin si
+		cpt4 suivant
+		si espaces = 0
+			alors
+			test = true
+		fin si
+		pour cpt allant de 1 à 23
+			si tab[cpt] = ' '
+				pour cpt2 allant de cpt à 22
+					tab[cpt2] <- tab[cpt2+1]
+				cpt2 suivant
+			fin si
+		cpt suivant
+	fin tant que
+	pour cpt3 allant de 1 à 23
+		afficher tab[cpt3]
+	cpt3 suivant
+Fin 7.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
