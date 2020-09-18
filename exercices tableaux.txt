@@ -33,3 +33,38 @@ Debut 7.2
 	afficher "Voici le nombre max du tableau : ", max
 	afficher "Voici le nombre min du tableau : ", min
 Fin 7.2
+
+Debut 7.3
+	Début déclaration variables
+		var cases :N <- 1
+	Fin déclarations variables
+	Début déclaration tableaux
+		const cases :N
+		var tab :N [cases]
+	Fin déclaration tableau
+	tab[cases] = 1
+	afficher tab[cases]
+	cases <- cases +1
+	tant que case < 17
+		tab[cases] = 2 * tab[cases-1]
+		afficher tab[cases]
+		cases <- cases +1
+	fin tant que
+Fin 7.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
