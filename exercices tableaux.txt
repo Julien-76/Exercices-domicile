@@ -1,0 +1,35 @@
+Debut 7.2
+	début déclaration mvariables
+		var cases :N <- 0
+		var chiffres :N <- 0
+		var max :N <- 0
+		var min :N <- 0
+	fin déclarations variables
+	afficher "Combien de nombres veux-tu rentrer?"
+	saisir cases
+	début déclaration tableau
+		const cases :N
+		var tab :N [cases]
+		var cpt :N <- 1
+	fin déclaration tableau
+	afficher "Entre tes nombres"
+	pour cpt allant de 1 à cases
+		saisir chiffres
+		si cpt = 1
+			alors
+			min <- chiffres
+			max <- chiffres
+		fin si
+		tab[cpt] <- chiffres
+		si chiffres > max
+			alors
+			max <- chiffres
+		fin si
+		si chiffres < min
+			alors
+			min <- chiffres
+		fin si
+	fin pour
+	afficher "Voici le nombre max du tableau : ", max
+	afficher "Voici le nombre min du tableau : ", min
+Fin 7.2
