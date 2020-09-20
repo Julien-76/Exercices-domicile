@@ -170,7 +170,30 @@ Déclaration des variables
 	afficher "La chaine de caractère apparait ", test, " fois"
 Fin 6.2.3
 
-
+Debut 6.4
+	début déclaration variables
+		var texte :T <- ""
+		var debut :N <- 0
+		var fin :N <- 0
+	fin déclaration variables
+	afficher "Entre un texte"
+	saisir texte
+	afficher "Choisi une position de départ"
+	saisir debut
+	tant que debut < 0
+		afficher "choix incorrect
+		saisir debut
+	fin tant que
+	afficher "Choisi une position de fin"
+	saisir fin
+	tant que fin > longueur(texte)
+		afficher "choix incorrect"
+		saisir fin
+	fin tant que
+	pour cpt allant de debut à fin-1
+		afficher caract(texte, cpt)
+	cpt suivant
+Fin 6.4
 
 
 
