@@ -1,0 +1,113 @@
+Julien Pothen Stagiaire Développeur Java
+
+Test Logique
+
+1) Bon café = chaud et ((sucre et non lait) ou ( non sucre et lait))
+
+Début 2
+1	Début déclaration variables
+2		var nombre :N <- 0
+2'		var cpt :N <- 1
+3	Fin déclaration Variable
+4	Afficher "Entre un nombre entier positif, je t'afficherai ses diviseurs"
+5	Saisir nombre
+6	tant que (nombre <= 0 ou nombre MOD 1 =/= 0)
+7		Afficher "Il me faut un entier positif"
+8		Saisir nombre
+9	fin tan que
+10	pour cpt allant de 1 à nombre
+11		si nombre MOD cpt = 0
+12			alors
+13			afficher cpt  
+14		fin si
+15	cpt suivant
+Fin 2
+
+Table logique Exercice 2
+
+lignes		cpt	nombre	Ecran / clavier
+1		
+2 - 4			0
+5			10	<- 10
+6 - 9			10
+10 - 12		1	10
+13		1	10	-> 1
+14		1	10
+15		2	10
+10 - 12		2	10
+13		2	10	-> 2
+14		2	10
+15		3	10
+10 - 12		3	10
+13		3	10
+14		3	10
+15		4	10
+10 - 12		4	10
+13		4	10
+14		4	10
+15		5	10
+10 - 12		5	10
+13		5	10	-> 5
+.
+.
+.
+.
+13		10	10	-> 10
+
+
+Début 3
+1	Début déclarations variables
+2		const taille :N <- x
+3		var tab :N [taille] 
+4		var test :N <- 0
+4'		var cpt :N <- 2
+5	Fin déclaration variables
+6	tant que cpt <= taille
+7		si tab[cpt] > tab[cpt - 1]
+8			alors
+9			test <- test + 1
+10		fin si
+11		cpt <- cpt + 1
+11'	fin tant que
+12	si test = taille - 1
+13		alors
+14		afficher "Le tableau est trié par ordre croissant"
+15		sinon
+16		afficher "Le tableau n'est pas trié par ordre croissant"
+17	fin si
+Fin 3 ***
+	
+Table des valeurs Exercice 3
+	taille	cpt	test	tab[1]	tab[2]	tab[3]	tab[4]	tab[5]	Ecran / Clavier
+1
+2	5
+3	5			-1	3	7	2	9
+4 - 5	5		0	-1	3	7	2	9
+6 - 8	5	2	0	-1	3	7	2	9
+9 - 10	5	2	1	-1	3	7	2	9
+11	5	3	1	-1	3	7	2	9
+6 - 8	5	3	1	-1	3	7	2	9
+9 - 10	5	3	2	-1	3	7	2	9
+11	5	4	2	-1	3	7	2	9
+6 - 8	5	4	2	-1	3	7	2	9
+9 - 10	5	4	2	-1	3	7	2	9
+11	5	5	2	-1	3	7	2	9
+6 - 8	5	5	2	-1	3	7	2	9
+9 - 15	5	5	3	-1	3	7	2	9
+16	5	5	3	-1	3	7	2	9	-> "Le tableau n'est pas trié par ordre croissant"
+17	5	5	3	-1	3	7	2	9
+
+
+4) Le programme construit un tableau de 100 cotes, la première est 0 et les suivantes vallent 10 de plus que la précédente.
+Quand on entrera un nombre, le programme le placera dans le tableau de façon à sa place de façon à ce que le tableau reste croissant
+
+
+*** avec boucle tant que :
+6	tant que cpt <= taille
+7		si tab[cpt] > tab[cpt - 1]
+8			alors
+9			test <- test + 1
+10		fin si
+11		cpt <- cpt + 1
+12	fin tant que
+
