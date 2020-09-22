@@ -195,6 +195,94 @@ Debut 6.4
 	cpt suivant
 Fin 6.4
 
+Debut 6.5
+	début déclaration variables
+		var cpt :N <- 1
+		var t1 :T <- ""
+		var t2 :T <- ""
+		var test :B <- faux
+		var testEgal :B <- faux
+	Fin déclarations variables
+	afficher "saisi un texte"
+	saisir t1
+	afficher "saisi un autre texte"
+	sasir t2
+	tant que caract(t1, cpt) = caract(t2, cpt) et cpt < Longueur(t1) et cpt < Longueur(t2)		// On cherche là où est la différence entre 2 lettres
+		cpt <- cpt + 1										// Il s'arrète quoi qu'il arrive à la dernière lettre du mot le plus petit
+	fin tant que
+	si caract(t1, cpt) > caract(t2,cpt)		// dernière comparaison avant de comparer les longueurs
+		alors
+		test <- vrai
+	fin si
+	si caract(t1, cpt) = caract(t2, cpt) et Longueur(t1) > Longueur(t2)
+		alors
+		test <- vrai
+	fin si
+	si test = faux
+		alors
+		afficher "FAUX"
+		sinon
+		afficher "VRAI"
+	fin si
+Fin 6.5
+			
+Debut 6.6
+	début déclaration variables
+		var cpt :N <- 1
+		var texte :T <- ""
+		var etxet :T <- ""
+	fin déclaration variables
+	afficher "Entre un texte, j'inverserai son sens"
+	saisir texte
+	pour cpt allant de Longueur(texte) à 1 par pas de -1	// autre possilité : pour cpt allant de 1 à Longueur(texte)
+		etxet <- etxet + caract(texte, cpt)					etxet <- caract(texte, cpt) + etxet
+	cpt suivant
+	afficher etxet
+Fin 6.6
+
+Debut 6.7
+	Début déclaration variables
+		var pied :N <- 1
+		var tete :N <- 1
+		var t1 :T <- ""
+		var t2 :T <- ""
+	Fin déclaration variables				  t
+	afficher "Entre un texte, j'inverserai les mots"	  p
+	saisir t1						//salut ca va
+	tant que tete <= Longueur(t1)
+		tant que caract(t1, tete) =/= ' '
+			tete <- tete + 1		  p    t
+		fin tant que				//salut ca va
+		t2 <- sousChaine(t1, pied, tete) + ' ' + t2			t
+		tete <- tete + 1					        p
+		pied <- tete						//salut ca va
+	fin tant que
+	t2 <- sousChaine(t2, 1, Longueur(t2))
+	afficher t2
+Fin 6.7
+
+Debut 6.8
+	Début déclaration variables
+		var pied :N <- 1
+		var tete :N <- 1
+		var t1 :T <- ""
+		var t2 :T <- ""
+		var cpt :N <- 1
+	fin déclaration variables
+	afficher "Entre un texte, j'inverserai les lettres dans les mots"
+	saisir t1
+	tant que tete <= Longueur(t1)
+		tant que caract(t1, tete) =/= ' '
+			tete <- tete + 1
+		fin tant que
+		pour cpt allant de pied à tete
+			mot <- caract(t1, cpt) + mot
+		cpt suivant
+		t2 <- mot + ' ' + t2
+	fin tant que
+	afficher t2
+Fin 6.8
+
 
 
 
