@@ -1,0 +1,157 @@
+Debut 8.1
+	début déclaration variables
+		var n1 :N <- 1
+		var n2 :N <- 0
+	fin déclaration variable
+	tant que n1 <= 10
+		n2 <- 1
+		tant que n2 <= 10
+			afficher n1, " X ", n2, " = ", ni * n2
+			n2 <- n2 + 1
+		fin tant que
+		n1 <- n1 + 1
+	fin tant que
+Fin 8.1.1
+	début déclaraction variables
+		var n1 :N <- 0
+		var n2 :N <- 0
+		var n3 :N <- 0
+	fin déclaration variable
+	tant que n1 < 10
+		n2 <- 0
+		tant que n2 < 10
+			n3 <- 0
+			tant que n3 < 10
+				afficher n1, n2, n3,", "
+				n3 <- n3 + 1
+			fin tant que
+			n2 <- n2 + 1
+		fin tant que
+		n1 <- n1 + 1
+	fin tant que
+Fin 8.2.1
+
+Debut 8.2.2
+	début déclaration variables
+		var centaines :N <- 0
+		var dizaines :N <- 0
+		var unites :N <- 0
+	fin déclaration variable
+	pour centaines allant de 0 à 9
+		pour dizaines allant de 0 à 9
+			pour unites allant de 0 à 9
+				afficher centaines, dizaines, unites,", "
+			unites suivant
+		dizaines suivant
+	centaines suivant
+Fin 8.1.2
+
+Debut 8.2.3
+	début déclaraction variables
+	var cpt :N <- 0
+	fin déclaration variable
+	pour cpt allant de 0 à 999
+		si cpt < 10
+			alors
+			afficher '0','0',cpt , ", "
+			sinon si cpt >= 10 et cpt < 100
+				alors
+				afficher '0', cpt , ", "
+				sinon
+					afficher cpt, ", "
+				fin si
+		fin si
+	cpt suivant
+Fin 8.2.3
+
+Début 8.2.4
+	début déclaration variables
+		var cpt :N <- 0
+	fin déclaration variables
+	pour cpt allant de 0 à 999
+		afficher cpt DIV 100, (cpt MOD 100) DIV 10, cpt MOD 10
+	cpt suivant
+Fin 8.2.4
+
+Debut 8.3
+	début déclaration variables
+		var cpt1 :N <- 0
+		var cpt2 :N <- 0
+		var test :N <- 0
+	fin déclarations variables
+	pour cpt allant de 1 à 100			// On teste tous les nombres de 1 à 100
+		test <- 0
+		pour cpt2 allant de 1 à cpt-1	// cpt2 parcours cpt en descendant
+			si cpt MOD cpt2 = 0
+				alors
+				test <- test + cpt2 // s'il repère un diviseur, il l'ajoute à "test"
+			fin si
+		cpt2 suivant
+		si test = cpt	
+			alors
+			afficher cpt, ", "
+		fin si
+		
+	cpt suivant
+Fin 8.3
+
+Debut 8.4
+	début déclarations variables
+		var cpt :N <- 2
+		var cpt2 :N <- 1
+		var test :N <- 0
+		var fin :N <- 0
+	fin déclarations variables
+	tant que fin <= 100
+		test <- 0
+		pour cpt2 allant de cpt à 2 par pas de -1
+			si cpt MOD cpt2 = 0
+				alors
+				test <- test + 1
+			fin si
+		cpt2 suivant
+		si test = 1
+			alors
+			fin <- fin + 1
+			afficher cpt, ", "
+		fin si
+		cpt <- cpt + 1
+	fin tant que
+Fin 8.4
+
+Debut 8.4 (avec boucle tant que)
+	début déclarations variables
+		var cpt :N <- 2
+		var cpt2 :N <- 1
+		var premier :B <- vrai
+		var fin :N <- 0
+	fin déclarations variables
+	tant que fin <= 100
+		premier <- vrai
+		cpt2 <- 2
+		tant que cpt2 <= Racine(cpt) et	premier	et (cpt MOD 2 =/= 0 ou cpt = 2)		// on démarre à 2 et pas besoin d'aller au dela de la moitié
+			si cpt MOD cpt2 = 0
+				alors
+				premier <- faux	// si on trouve un diviseur : faux (pas premier)
+			fin si
+			cpt2 <- cpt2 + 1
+		fin tant que
+		si premier			// si pas trouvé de diviseur, premier reste vrai
+			alors
+			fin <- fin + 1
+			afficher cpt, ", "
+		fin si
+		cpt <- cpt + 1
+	fin tant que
+Fin 8.4
+
+
+
+
+
+
+
+
+
+
+
