@@ -1,0 +1,184 @@
+Début 9.1
+	Variables locales
+		const taille :N
+		var x :N <- 1
+		var y :N <- taille
+		var tab :N [taille, taille]
+	Fin variables locales
+	pour x allant de 1 à taille
+		tab[x, x] <- 1
+		tab[taille + 1 - x, x] <- 2    // y = 5 - x
+	ind suivant
+Fin 9.1
+
+Debut 9.2.1
+	Variables locales
+		const long :N
+		const larg :N
+		var tab1 :N [long, larg]
+		var tab2 :N [long * larg]
+		var cpt :N <- 1
+		var x :N <- 1
+		var y :N <- 1
+	Fin variables locales
+		pour y allant de 1 à larg
+			pour x allant de 1 à long
+				tab2[cpt] <- tab[y, x]
+				cpt <- cpt + 1
+			x suivant
+		y suivant
+Fin 9.2.1
+
+Debut 9.2.2
+	Variables locales
+		const long :N
+		const larg :N
+		var tab1 :N [long, larg]
+		var tab2 :N [long * larg]
+		var x :N <- 1
+		var y :N <- 1
+	Fin variables locales
+		pour y allant de 1 à larg
+			pour x allant de 1 à long
+				tab2[(y - 1) * long + x] <- tab[y, x]
+			x suivant
+		y suivant
+Fin 9.2.2
+
+Debut 9.2.3
+	Variables locales
+		const long :N
+		const larg :N
+		var tab1 :N [long, larg]
+		var tab2 :N [long * larg]
+		var y :N <- 1
+	Fin variables locales
+		pour y allant de 1 à larg
+			pour y MOD long allant de 1 à long
+				tab2[((y - 1) * long + y MOD long)] <- tab[y, y MOD long]
+			y MOD long suivant
+		y suivant
+Fin 9.2.3
+
+Debut 9.3
+	Variables locales
+		const long :N
+		const larg :N
+		var tab :N [long, larg]
+		var x :N <- 1
+		var y :N <- 1
+		var total :N <- 0
+		var min <- 0
+		var max <- 0
+	Fin variables locales
+	pour y allant de 1 à larg
+		min <- tab[y, 1]
+		max <- tab[y, 1]
+		pour x allant de 1 à long
+			si tab[y, x] < min
+				alors
+				min <- tab[y, x]
+			si tab[y, x] > max
+				alors
+				max <- tab[y, x]
+			total <- total + tab[y, x]
+		x suivant
+		afficher "Voici la moyenne de cette ligne : ", total / long
+		afficher "Voici le max de cette ligne : ", max
+		afficher "Voici le min de cette ligne : ", min
+		total <- 0
+		x <- 1
+	y suivant
+Fin 9.3
+
+Début 9.4
+	Variables locales
+		cont taille :N
+		var magique :B <- 3 = 3
+		var test :N <- 0
+		var x :N <- 1
+		var y :N <- 1
+		var tab :N [taille, taile]
+		var long :N <- taille
+		var reference :N <- 0
+	Fin variables locales
+	pour x allant de 1 à long
+		reference <- reference + tab[y, x]
+		test <- test + tab[long, x]
+		long <- long - 1
+		y <- y + 1
+	x suivant
+	si reference =/= test
+		alors
+		magique <- faux
+	fin si
+	test <- 0
+	y <- 1
+	tant que y <= taille et magique
+		pour x allant de 1 à taille
+			test <- test + tab[y, x]
+		x suivant
+		si test =/= reference
+			alors
+			magique <- faux
+		fin si
+		y <- y + 1
+		test <- 0
+	fin tant que
+	tant que x <= taille et magique
+		pour y allant de 1 à taille
+			test <- test + tab[y, x]
+		y suivant
+		si test =/= reference
+			alors
+			magique <- faux
+		fin si
+		x <- x + 1
+		test <- 0
+	fin tant que
+	si magique
+		afficher "Le carré est magique"
+		sinon
+		afficher "Le carré n'est pas magique"
+	fin si
+Fin 9.4
+
+Debut 9.5
+	variables locales
+		const taille :N
+		tab1 :N [taille]
+		tab2 :N [taille]
+	fin variables locales
+	pour y allant de 1 à taille
+		pour x allant de 1 à taille
+			tab2[y,x] <- tab1[x,taille - y + 1]
+		x suivant
+	y suivant
+Fin 9.5
+
+	variable garde
+
+	garde <- tab[y, x]
+
+	tab[y,x] <- tab[x, taille - y + 1]
+	tab[x, taille - y + 1] <- tab[taille - y + 1, taille - x + 1]
+	tab[taille - y + 1, taille - x + 1] <- tab[taille - x + 1, y]
+	tab[taille - x + 1, y] <- garde
+
+	taille² DIV 4 = nombre de fois qu'on va devoir changer de position
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
