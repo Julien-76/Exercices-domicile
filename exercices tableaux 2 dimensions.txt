@@ -151,22 +151,31 @@ Debut 9.5
 	fin variables locales
 	pour y allant de 1 à taille
 		pour x allant de 1 à taille
-			tab2[y,x] <- tab1[x,taille - y + 1]
+			tab2[y,x] <- tab1[x, taille - y + 1]
 		x suivant
 	y suivant
 Fin 9.5
 
-	variable garde
-
+Debut 9.5
+	variables locales
+		const taille :N
+		var x :N <- 1
+		var y :N <- 1
+		var garde :N <- 0
+		var Tab :N [taille]
+	fin variables
 	garde <- tab[y, x]
+	pour y allant de 1 à taille - taille DIV 2
+		pour x allant de 1 à taille DIV 2
+			tab[y,x] <- tab[x, taille - y + 1]
+			tab[x, taille - y + 1] <- tab[taille - y + 1, taille - x + 1]
+			tab[taille - y + 1, taille - x + 1] <- tab[taille - x + 1, y]
+			tab[taille - x + 1, y] <- garde
+		x suivant
+	y suivant
+Fin 9.5
 
-	tab[y,x] <- tab[x, taille - y + 1]
-	tab[x, taille - y + 1] <- tab[taille - y + 1, taille - x + 1]
-	tab[taille - y + 1, taille - x + 1] <- tab[taille - x + 1, y]
-	tab[taille - x + 1, y] <- garde
 
-	taille² DIV 4 = nombre de fois qu'on va devoir changer de position
-	
 	
 
 
